@@ -15,7 +15,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By AddProjectButtonBy = By.Id("sidebar-projects-add");
         private static readonly By DialogBodyBy = By.ClassName("dialog-body-date");
 
-
         public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
@@ -25,7 +24,7 @@ namespace TMS_TestRail_FinalWork.Pages
         {
 
         }
-                
+                   
         public override bool IsPageOpened()
         {
             return WaitService.GetVisibleElement(DialogBodyBy) != null;
@@ -36,7 +35,7 @@ namespace TMS_TestRail_FinalWork.Pages
             return END_POINT;
         }               
 
-        public AddProjectPage ClickAddProjectButton()
+        public AddProjectPage AddProject()
         {
             Driver.FindElement(AddProjectButtonBy).Click();
             return new AddProjectPage(Driver);

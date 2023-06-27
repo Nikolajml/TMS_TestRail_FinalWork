@@ -20,7 +20,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By LoginInButtonBy = By.Id("button_primary");
         private static readonly By ErrorMessageBy = By.ClassName("error-on-top");
 
-
         public LoginPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
@@ -39,8 +38,7 @@ namespace TMS_TestRail_FinalWork.Pages
         {
             return END_POINT;
         }
-               
-                                        
+                                                       
         void SetUserName(string username)
         {
             Driver.FindElement(EmailInputBy).SendKeys(username);

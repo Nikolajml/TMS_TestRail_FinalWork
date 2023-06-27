@@ -17,7 +17,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By AnounecementInpuBy = By.Id("announcement");
         private static readonly By AddProjectButtonBy = By.Id("accept");
 
-
         public AddProjectPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
@@ -36,10 +35,7 @@ namespace TMS_TestRail_FinalWork.Pages
         protected override string GetEndpoint()
         {
             return END_POINT;
-        }
-
-        //public IWebElement NameInput => Driver.FindElement(NameInputBy);
-                
+        }                             
 
         void SetProjectName(string projectName)
         {
@@ -56,12 +52,12 @@ namespace TMS_TestRail_FinalWork.Pages
             Driver.FindElement(AddProjectButtonBy).Click();
         }
 
-        public CreatedProjectPage CreateProject(Project project)
+        public ProjectsPage CreateProject(Project project)
         {
             SetProjectName(project.Name);
             SetProjectAnnouncement(project.Announcement);
             ClickAddProjectButton();
-            return new CreatedProjectPage(Driver);
+            return new ProjectsPage(Driver);
         }
     }
 }

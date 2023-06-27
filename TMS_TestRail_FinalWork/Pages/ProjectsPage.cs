@@ -1,25 +1,25 @@
-﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.Core;
 
 namespace TMS_TestRail_FinalWork.Pages
 {
-    public class CreatedTestCase : BasePage
+    public class ProjectsPage : BasePage
     {
-        private static string END_POINT = "";
+        private static string END_POINT = "index.php?/admin/projects/overview";
+                
+        private static readonly By SuccessMessageBy = By.ClassName("message-success");
 
-        private static readonly By SuccessMessageBy = By.ClassName("message message-success");
-
-        public CreatedTestCase(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
+        public ProjectsPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
         }
 
-        public CreatedTestCase(IWebDriver? driver) : base(driver, false)
+        public ProjectsPage(IWebDriver? driver) : base(driver, false)
         {
 
         }
@@ -32,7 +32,7 @@ namespace TMS_TestRail_FinalWork.Pages
         protected override string GetEndpoint()
         {
             return END_POINT;
-        }
+        }            
 
         public string GetSuccessMessage()
         {

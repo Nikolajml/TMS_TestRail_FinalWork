@@ -15,31 +15,23 @@ using NUnit.Framework.Interfaces;
 namespace TMS_TestRail_FinalWork.Tests
 {
     [AllureNUnit]
-    [Parallelizable(ParallelScope.All)]
+    //[Parallelizable(ParallelScope.All)]
     public class BaseTest
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         protected IWebDriver Driver;
         private AllureLifecycle _allure;
-        public LoginPage LoginPage { get; set; }
-        public CreatedTestCase CreatedTestCase { get; set; }
-             
+        public LoginPage LoginPage;
+        public ProjectsPage ProjectsPage;                    
 
         [SetUp]
         public void Setup()
-        {
-            _logger.Trace("Сообщение уровня Trace");
-            _logger.Debug("Сообщение уровня Debug");
-            _logger.Info("Сообщение уровня Info");
-            _logger.Warn("Сообщение уровня Warn");
-            _logger.Error("Сообщение уровня Error");
-            _logger.Fatal("Сообщение уровня Fatal");
-
+        {            
             Driver = new Browser().Driver;
             
-            LoginPage = new LoginPage(Driver);
-            CreatedTestCase = new CreatedTestCase(Driver);
+            LoginPage = new LoginPage(Driver, true );
+            ProjectsPage = new ProjectsPage(Driver);
 
             _allure = AllureLifecycle.Instance;
         }
