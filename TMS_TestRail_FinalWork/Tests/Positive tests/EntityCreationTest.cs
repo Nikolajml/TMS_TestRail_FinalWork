@@ -1,4 +1,6 @@
-﻿using AngleSharp;
+﻿using Allure.Commons;
+using AngleSharp;
+using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,12 @@ namespace TMS_TestRail_FinalWork.Tests
 {
     public class EntityCreationTest : BaseTest
     {
-        [Test]
-        public void CreateCaseTest()
+        [Test(Description = "Successful project creation test")]
+        [Description("Successful test to create a project using the Chain of Invocation and Value of Objects design patterns")]
+        [AllureOwner("User")]
+        [AllureTag("Smoke")]
+        [SmokeTest]        
+        public void CreateProjectTest()
         {
             string expectedSuccessMessage = "Successfully added the new project.";
 

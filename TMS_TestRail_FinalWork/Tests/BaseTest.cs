@@ -15,7 +15,7 @@ using NUnit.Framework.Interfaces;
 namespace TMS_TestRail_FinalWork.Tests
 {
     [AllureNUnit]
-    //[Parallelizable(ParallelScope.All)]
+    [Parallelizable(ParallelScope.All)]
     public class BaseTest
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
