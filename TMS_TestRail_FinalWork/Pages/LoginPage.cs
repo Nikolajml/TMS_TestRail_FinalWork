@@ -18,7 +18,7 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By PasswordInputBy = By.Id("password");
         private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
         private static readonly By LoginInButtonBy = By.Id("button_primary");
-        private static readonly By ErrorMessageBy = By.ClassName("error-on-top");
+        private static readonly By ErrorMessageBy = By.ClassName("error-text");
 
         public LoginPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {

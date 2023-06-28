@@ -33,11 +33,9 @@ namespace TMS_TestRail_FinalWork.Tests
                 .SetProjectAnnouncement("The project was created for testing")
                 .Build();                      
 
-
             LoginPage.SuccessfulLogin(user)
                 .AddProject()
                 .CreateProject(project);                
-
 
             Assert.That(ProjectsPage.GetSuccessMessage, Is.EqualTo(expectedSuccessMessage));             
         }
