@@ -9,7 +9,8 @@ namespace TMS_TestRail_FinalWork.Models
 {
     public class Project
     {
-        public string Name { get; set; }
         public ProjectType Type { get; set; }
+        public string Name { get; set; }
+        public string Announcement { get; set; }        
     }
 }
