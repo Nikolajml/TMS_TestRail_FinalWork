@@ -13,7 +13,8 @@ namespace TMS_TestRail_FinalWork.Pages
         private static string END_POINT = "index.php?/admin/projects/add";
 
         private static readonly By ProjectsButtonBy = By.Id("navigation-sub-projects");
-        
+        private static readonly By DataManagementButtonBy = By.Id("navigation-sub-subscription");
+
         public OverviewPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
@@ -38,6 +39,12 @@ namespace TMS_TestRail_FinalWork.Pages
         {
             Driver.FindElement(ProjectsButtonBy).Click();
             return new ProjectsPage(Driver);
+        }
+
+        public DataManagement_Storage_Page NavigateToDataManagement_Storage_Page()
+        {
+            Driver.FindElement(DataManagementButtonBy).Click();
+            return new DataManagement_Storage_Page(Driver);
         }
 
     }
