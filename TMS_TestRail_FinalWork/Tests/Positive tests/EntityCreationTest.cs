@@ -21,7 +21,7 @@ namespace TMS_TestRail_FinalWork.Tests
         [SmokeTest]        
         public void CreateProjectTest()
         {
-            string expectedSuccessMessage = "Successfully added the new project.";
+            string expectedSuccessCreatedMessage = "Successfully added the new project.";
 
             User user = new UserBuilder()
                 .SetUsername("nicolas.maliavko@gmail.com")
@@ -37,7 +37,7 @@ namespace TMS_TestRail_FinalWork.Tests
                 .AddProject()
                 .CreateProject(project);                
 
-            Assert.That(ProjectsPage.GetSuccessMessage, Is.EqualTo(expectedSuccessMessage));             
+            Assert.That(ProjectsPage.GetSuccessCreatedMessage, Is.EqualTo(expectedSuccessCreatedMessage));             
         }
     }
 }

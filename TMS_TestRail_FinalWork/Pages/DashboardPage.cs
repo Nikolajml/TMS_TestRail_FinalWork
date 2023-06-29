@@ -14,6 +14,7 @@ namespace TMS_TestRail_FinalWork.Pages
                 
         private static readonly By AddProjectButtonBy = By.Id("sidebar-projects-add");
         private static readonly By DialogBodyBy = By.ClassName("dialog-body-date");
+        private static readonly By AdministrationButtonBy = By.Id("navigation-admin");
 
         public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -39,6 +40,12 @@ namespace TMS_TestRail_FinalWork.Pages
         {
             Driver.FindElement(AddProjectButtonBy).Click();
             return new AddProjectPage(Driver);
+        }
+
+        public OverviewPage NavigateToOverviewPage() 
+        {
+            Driver.FindElement(AdministrationButtonBy).Click();
+            return new OverviewPage(Driver);
         }
     }
 }
