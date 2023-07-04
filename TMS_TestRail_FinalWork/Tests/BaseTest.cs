@@ -23,7 +23,8 @@ namespace TMS_TestRail_FinalWork.Tests
         protected IWebDriver Driver;
         private AllureLifecycle _allure;
         public LoginPage LoginPage;
-        public ProjectsPage ProjectsPage;                    
+        public ProjectsPage ProjectsPage;      
+        public DashboardPage DashboardPage;
 
         [SetUp]
         public void Setup()
@@ -32,6 +33,7 @@ namespace TMS_TestRail_FinalWork.Tests
             
             LoginPage = new LoginPage(Driver, true );
             ProjectsPage = new ProjectsPage(Driver);
+            DashboardPage = new DashboardPage(Driver);
 
             _allure = AllureLifecycle.Instance;
         }
