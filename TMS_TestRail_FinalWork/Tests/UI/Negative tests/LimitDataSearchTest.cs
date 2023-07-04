@@ -11,8 +11,8 @@ namespace TMS_TestRail_FinalWork.Tests.Negative_tests
 {
     public class LimitDataSearchTest : BaseTest
     {
-        [Test(Description = "Test with incorrect data")]
-        [Description("The test uses an incorrect password for authorization")]
+        [Test(Description = "Test for input data exceeding the allowable")]
+        [Description("In the search field on the Dashboard page, data is entered that exceeds the allowable (more than 250 characters)")]
         [AllureOwner("User")]
         [AllureTag("Smoke")]
         [SmokeTest]

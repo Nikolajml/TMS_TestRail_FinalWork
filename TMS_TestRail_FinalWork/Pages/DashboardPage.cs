@@ -16,9 +16,10 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By AddProjectButtonBy = By.Id("sidebar-projects-add");
         private static readonly By DialogBodyBy = By.ClassName("dialog-body-date");
         private static readonly By AdministrationButtonBy = By.Id("navigation-admin");
-        private static readonly By SearchQueryInput = By.Id("search_query");
-        private static readonly By SearchQueryEnter = By.Id("search_query");
-        private static readonly By ErrorDialogMessage = By.CssSelector("#messageDialog .dialog-body .dialog-message");
+        private static readonly By SearchQueryInputBy = By.Id("search_query");
+        private static readonly By SearchQueryEnterBy = By.Id("search_query");
+        private static readonly By ErrorDialogMessageBy = By.CssSelector("#messageDialog .dialog-body .dialog-message");
+        private static readonly By SearchDialogCategoryBy = By.CssSelector("a[href$='[]=1']");
         
 
         public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
@@ -55,25 +56,35 @@ namespace TMS_TestRail_FinalWork.Pages
 
         private void InputInSearchField()
         {
-            Driver.FindElement(SearchQueryInput).Click();           
+            Driver.FindElement(SearchQueryInputBy).Click();           
         }
 
         private void EnterInSearchField(string text)
         {
-            Driver.FindElement(SearchQueryEnter).SendKeys(text);
-        }
-                
+            Driver.FindElement(SearchQueryEnterBy).SendKeys(text);
+        }                
 
         public void EnterDataInSearchField(string text)
         {
             InputInSearchField();
             EnterInSearchField(text);
         }
-               
-        
+                       
         public string GetErrorLimitDialogMessage()
         {
-            return Driver.FindElement(ErrorDialogMessage).Text;
+            return Driver.FindElement(ErrorDialogMessageBy).Text;
+        }
+
+        public Dashboard_SearchProject_Page NavigateToProjectCategorySearch()
+        {
+            InputInSearchField();
+            SelectProjectCategory();
+            return new Dashboard_SearchProject_Page(Driver);
+        }
+
+        private void SelectProjectCategory()
+        {                
+            Driver.FindElement(SearchDialogCategoryBy).Click();    
         }
     }
 }

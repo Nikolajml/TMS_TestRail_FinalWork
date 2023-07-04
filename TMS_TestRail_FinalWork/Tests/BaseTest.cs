@@ -25,6 +25,7 @@ namespace TMS_TestRail_FinalWork.Tests
         public LoginPage LoginPage;
         public ProjectsPage ProjectsPage;      
         public DashboardPage DashboardPage;
+        public Dashboard_SearchProject_Page dashboard_SearchProject_Page;
 
         [SetUp]
         public void Setup()
@@ -34,6 +35,7 @@ namespace TMS_TestRail_FinalWork.Tests
             LoginPage = new LoginPage(Driver, true );
             ProjectsPage = new ProjectsPage(Driver);
             DashboardPage = new DashboardPage(Driver);
+            dashboard_SearchProject_Page = new Dashboard_SearchProject_Page(Driver);
 
             _allure = AllureLifecycle.Instance;
         }
