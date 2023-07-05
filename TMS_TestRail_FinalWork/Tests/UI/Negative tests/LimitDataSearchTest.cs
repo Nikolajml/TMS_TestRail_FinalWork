@@ -28,7 +28,8 @@ namespace TMS_TestRail_FinalWork.Tests.Negative_tests
                 .Build();
 
             LoginPage.SuccessfulLogin(user)
-                .EnterDataInSearchField(enterData);
+                .EnterDataInSearchField(enterData)
+                .WaitDialogWindow();                            
 
             Assert.That(DashboardPage.GetErrorLimitDialogMessage, Is.EqualTo(expectedErrorMessage));
         }
