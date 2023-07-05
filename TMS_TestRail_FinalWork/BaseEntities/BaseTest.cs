@@ -27,6 +27,7 @@ namespace TMS_TestRail_FinalWork.BaseEntities
         public DashboardPage DashboardPage;
         public Dashboard_SearchProject_Page dashboard_SearchProject_Page;
         public UserAndRolesPage userAndRolesPage;
+        public IntegrationPage integrationPage;
 
         [SetUp]
         public void Setup()
@@ -38,6 +39,7 @@ namespace TMS_TestRail_FinalWork.BaseEntities
             DashboardPage = new DashboardPage(Driver);
             dashboard_SearchProject_Page = new Dashboard_SearchProject_Page(Driver);
             userAndRolesPage = new UserAndRolesPage(Driver);
+            integrationPage = new IntegrationPage(Driver);
 
             _allure = AllureLifecycle.Instance;
         }
@@ -56,8 +58,8 @@ namespace TMS_TestRail_FinalWork.BaseEntities
                 _allure.AddAttachment("Screenshot", "image/png", screenshotBytes);
             }
 
-            //Driver.Quit();
-            //Driver.Dispose();
+            Driver.Quit();
+            Driver.Dispose();
         }
     }
 }

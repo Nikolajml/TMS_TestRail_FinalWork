@@ -17,7 +17,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Negative_tests
         [AllureOwner("User")]
         [AllureTag("Smoke")]
         [SmokeTest]
-        public void LimitDataSearchQueryTest()
+        public void DefectCreateUserTest()
         {
             string expectedSuccessCreateUserMessage = "Successfully added the new user and sent an invitation email.";
 
@@ -37,7 +37,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Negative_tests
                 .NavigateToAddUserPage()
                 .CreateUser(userForCreate);
 
-            Assert.That(ProjectsPage.GetSuccessCreatedMessage, Is.EqualTo(expectedSuccessCreateUserMessage));
+            Assert.That(ProjectsPage.GetSuccessCreateProjectMessage, Is.EqualTo(expectedSuccessCreateUserMessage));
         }
     }
 }
