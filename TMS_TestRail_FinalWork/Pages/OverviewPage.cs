@@ -16,6 +16,7 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By ProjectsButtonBy = By.Id("navigation-sub-projects");
         private static readonly By DataManagementButtonBy = By.Id("navigation-sub-subscription");
         private static readonly By UserAndRolesButtonBy = By.Id("navigation-sub-users");
+        private static readonly By IntegrationButtonBy = By.Id("navigation-sub-integration");
 
         public OverviewPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -53,6 +54,12 @@ namespace TMS_TestRail_FinalWork.Pages
         {
             Driver.FindElement(UserAndRolesButtonBy).Click();
             return new UserAndRolesPage(Driver);
+        }
+
+        public IntegrationPage NavigateToIntegrationPage()
+        {
+            Driver.FindElement(IntegrationButtonBy).Click();
+            return new IntegrationPage(Driver);
         }
     }
 }
