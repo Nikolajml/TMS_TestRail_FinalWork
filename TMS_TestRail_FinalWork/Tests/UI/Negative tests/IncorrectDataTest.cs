@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Models;
 
 namespace TMS_TestRail_FinalWork.Tests.Negative_tests
-{    
+{
     public class IncorrectDataTest : BaseTest
     {
         [Test(Description = "Test with incorrect data")]

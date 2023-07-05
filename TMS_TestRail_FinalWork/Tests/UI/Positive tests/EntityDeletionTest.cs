@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Models;
 using TMS_TestRail_FinalWork.Pages;
 
@@ -18,7 +19,7 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
         [SmokeTest]
         public void DeleteProjectTest()
         {
-            string expectedSuccessDeletedMessage = "Successfully deleted the project.";
+            string expectedSuccessDeleteProjectMessage = "Successfully deleted the project.";
 
             User user = new UserBuilder()
                 .SetUsername("nicolas.maliavko@gmail.com")
@@ -31,7 +32,7 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
                 .DeleteProject();
             
 
-            Assert.That(ProjectsPage.GetSuccessDeletedMessage, Is.EqualTo(expectedSuccessDeletedMessage));
+            Assert.That(ProjectsPage.GetSuccessDeleteProjectMessage, Is.EqualTo(expectedSuccessDeleteProjectMessage));
         }
     }
 }

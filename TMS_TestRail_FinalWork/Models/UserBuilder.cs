@@ -27,6 +27,12 @@ namespace TMS_TestRail_FinalWork.Models
             return this;
         }
 
+        public UserBuilder SetEmail(string email)
+        {
+            user.Email = email;
+            return this;
+        }
+
         public User Build()
         {
             return user;

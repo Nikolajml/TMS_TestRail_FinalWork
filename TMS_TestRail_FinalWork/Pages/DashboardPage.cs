@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Core;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -15,7 +16,7 @@ namespace TMS_TestRail_FinalWork.Pages
                 
         private static readonly By AddProjectButtonBy = By.Id("sidebar-projects-add");
         private static readonly By DialogBodyBy = By.ClassName("dialog-body-date");
-        private static readonly By AdministrationButtonBy = By.Id("navigation-admin");
+        private static readonly By AdministrationButtonBy = By.Id("navigation-admin");        
         private static readonly By SearchQueryInputBy = By.Id("search_query");
         private static readonly By SearchQueryEnterBy = By.Id("search_query");
         private static readonly By ErrorDialogMessageBy = By.CssSelector("#messageDialog .dialog-body .dialog-message");
@@ -85,6 +86,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private void SelectProjectCategory()
         {                
             Driver.FindElement(SearchDialogCategoryBy).Click();    
-        }
+        }        
     }
 }

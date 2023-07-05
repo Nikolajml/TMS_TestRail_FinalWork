@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Core;
 
 namespace TMS_TestRail_FinalWork.Pages
@@ -38,12 +39,12 @@ namespace TMS_TestRail_FinalWork.Pages
             return END_POINT;
         }            
 
-        public string GetSuccessCreatedMessage()
+        public string GetSuccessCreateProjectMessage()
         {
             return Driver.FindElement(MessageBy).Text;
         }
 
-        public string GetSuccessDeletedMessage()
+        public string GetSuccessDeleteProjectMessage()
         {
             return Driver.FindElement(MessageBy).Text;
         }               
