@@ -15,7 +15,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By SearchByTitleBy = By.ClassName("sidebar-h1");
         private static readonly By SearchQueryInputBy = By.Id("searchQueryDetailed");
         private static readonly By SearchQueryEnterBy = By.Id("searchQueryDetailed");
-
         private static readonly By ErrorDialogMessageDisplayedBy = By.CssSelector("#messageDialog .dialog-body .dialog-message");
 
 
@@ -55,16 +54,22 @@ namespace TMS_TestRail_FinalWork.Pages
             Driver.FindElement(SearchQueryInputBy).SendKeys(Keys.Enter);
         }
 
-        public void EnterDataInSearchField(string text)
+        public Dashboard_SearchProject_Page EnterDataInSearchField(string text)
         {
             InputInSearchField();
             EnterInSearchField(text);
             PressEnterInSearchField();
+            return this;
         }
 
         public bool IsPresentErrorLimitDialogMessage()
         {
             return Driver.FindElement(ErrorDialogMessageDisplayedBy).Displayed;
+        }
+
+        public bool WaitDialogWindow()
+        {
+            return WaitService.GetVisibleElement(ErrorDialogMessageDisplayedBy) != null;
         }
     }
 }

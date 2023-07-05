@@ -69,7 +69,8 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
 
             LoginPage.SuccessfulLogin(user)
                 .NavigateToProjectCategorySearch()
-                .EnterDataInSearchField(searchProject);
+                .EnterDataInSearchField(searchProject)
+                .WaitDialogWindow();
 
             Assert.IsTrue(dashboard_SearchProject_Page.IsPresentErrorLimitDialogMessage());
         }
