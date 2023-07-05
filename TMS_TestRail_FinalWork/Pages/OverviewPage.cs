@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Core;
 
 namespace TMS_TestRail_FinalWork.Pages
@@ -14,6 +15,7 @@ namespace TMS_TestRail_FinalWork.Pages
 
         private static readonly By ProjectsButtonBy = By.Id("navigation-sub-projects");
         private static readonly By DataManagementButtonBy = By.Id("navigation-sub-subscription");
+        private static readonly By UserAndRolesButtonBy = By.Id("navigation-sub-users");
 
         public OverviewPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -47,5 +49,10 @@ namespace TMS_TestRail_FinalWork.Pages
             return new DataManagement_Storage_Page(Driver);
         }
 
+        public UserAndRolesPage NavigateToUserAndRolesPage()
+        {
+            Driver.FindElement(UserAndRolesButtonBy).Click();
+            return new UserAndRolesPage(Driver);
+        }
     }
 }

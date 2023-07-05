@@ -12,7 +12,7 @@ using TMS_TestRail_FinalWork.Pages;
 using TMS_TestRail_FinalWork.Utilities.Configuration;
 using NUnit.Framework.Interfaces;
 
-namespace TMS_TestRail_FinalWork.Tests
+namespace TMS_TestRail_FinalWork.BaseEntities
 {
     [AllureNUnit]
     [Parallelizable(ParallelScope.All)]
@@ -23,19 +23,21 @@ namespace TMS_TestRail_FinalWork.Tests
         protected IWebDriver Driver;
         private AllureLifecycle _allure;
         public LoginPage LoginPage;
-        public ProjectsPage ProjectsPage;      
+        public ProjectsPage ProjectsPage;
         public DashboardPage DashboardPage;
         public Dashboard_SearchProject_Page dashboard_SearchProject_Page;
+        public UserAndRolesPage userAndRolesPage;
 
         [SetUp]
         public void Setup()
-        {            
+        {
             Driver = new Browser().Driver;
-            
-            LoginPage = new LoginPage(Driver, true );
+
+            LoginPage = new LoginPage(Driver, true);
             ProjectsPage = new ProjectsPage(Driver);
             DashboardPage = new DashboardPage(Driver);
             dashboard_SearchProject_Page = new Dashboard_SearchProject_Page(Driver);
+            userAndRolesPage = new UserAndRolesPage(Driver);
 
             _allure = AllureLifecycle.Instance;
         }
@@ -54,8 +56,8 @@ namespace TMS_TestRail_FinalWork.Tests
                 _allure.AddAttachment("Screenshot", "image/png", screenshotBytes);
             }
 
-            Driver.Quit();
-            Driver.Dispose();
+            //Driver.Quit();
+            //Driver.Dispose();
         }
     }
 }

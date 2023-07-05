@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Models;
 using TMS_TestRail_FinalWork.Pages;
 using TMS_TestRail_FinalWork.Utilities.Configuration;
@@ -21,7 +22,7 @@ namespace TMS_TestRail_FinalWork.Tests
         [SmokeTest]        
         public void CreateProjectTest()
         {
-            string expectedSuccessCreatedMessage = "Successfully added the new project.";
+            string expectedSuccessCreateProjectMessage = "Successfully added the new project.";
 
             User user = new UserBuilder()
                 .SetUsername("nicolas.maliavko@gmail.com")
@@ -37,7 +38,7 @@ namespace TMS_TestRail_FinalWork.Tests
                 .AddProject()
                 .CreateProject(project);                
 
-            Assert.That(ProjectsPage.GetSuccessCreatedMessage, Is.EqualTo(expectedSuccessCreatedMessage));             
+            Assert.That(ProjectsPage.GetSuccessCreateProjectMessage, Is.EqualTo(expectedSuccessCreateProjectMessage));             
         }
     }
 }
