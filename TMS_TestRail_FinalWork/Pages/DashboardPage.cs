@@ -24,8 +24,6 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By TopLogoBy = By.Id("top-logo");
         private static readonly By EnterpriseBubblePopupMessageBy = By.Id("enterpriseBubble");
 
-
-
         public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
 
@@ -94,8 +92,6 @@ namespace TMS_TestRail_FinalWork.Pages
         {                
             Driver.FindElement(SearchDialogCategoryBy).Click();    
         }
-
-
 
         public bool WaitPopupMessage()
         {

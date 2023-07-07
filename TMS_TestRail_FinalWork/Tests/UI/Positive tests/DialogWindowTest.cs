@@ -28,8 +28,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests
             LoginPage.SuccessfulLogin(user)
                 .NavigateToOverviewPage()
                 .NavigateToIntegrationPage()
-                .ClickToConfigureIntegrationButton();
-                
+                .ClickToConfigureIntegrationButton();                
 
             Assert.That(integrationPage.GetDialogTitle, Is.EqualTo(expectedTitle));
         }

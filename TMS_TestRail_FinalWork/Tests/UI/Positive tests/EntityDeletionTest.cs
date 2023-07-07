@@ -29,8 +29,7 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
             LoginPage.SuccessfulLogin(user)
                 .NavigateToOverviewPage()
                 .NavigateToProjectsPage()
-                .DeleteProject();
-            
+                .DeleteProject();            
 
             Assert.That(ProjectsPage.GetSuccessDeleteProjectMessage, Is.EqualTo(expectedSuccessDeleteProjectMessage));
         }

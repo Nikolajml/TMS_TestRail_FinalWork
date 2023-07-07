@@ -31,8 +31,9 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
                 .NavigateToDataManagement_Storage_Page()
                 .NavigateToDataManagement_Attachments_Page()
                 .UploadFile();
-            
-            
+
+            Thread.Sleep(5000);
+
             Assert.True(Driver.FindElement(By.XPath("//div[@title='FileForUpload.txt']")).Displayed);
         }
     }
