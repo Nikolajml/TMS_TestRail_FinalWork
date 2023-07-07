@@ -11,13 +11,17 @@ namespace TMS_TestRail_FinalWork.BaseEntities
     public class BaseApiTest
     {
         protected ApiClient _apiClient;
-        protected UserService _userService;         
+        protected UserService _userService;
+        protected ProjectService _projectService;
+        protected MilestoneService _milestoneService;
 
         [OneTimeSetUp]
         public void InitApiClient()
         {
             _apiClient = new ApiClient();
-            _userService = new UserService(_apiClient);            
+            _userService = new UserService(_apiClient);
+            _projectService = new ProjectService(_apiClient);
+            _milestoneService = new MilestoneService(_apiClient);
         }
     }
 }
