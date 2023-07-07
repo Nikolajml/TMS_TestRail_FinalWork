@@ -21,7 +21,7 @@ namespace TMS_TestRail_FinalWork.Clients
             var options = new RestClientOptions(Configurator.AppSettings.URL)
             {
                 Authenticator = new HttpBasicAuthenticator(Configurator.Admin.Username, Configurator.Admin.Password),
-                ThrowOnAnyError = true,
+                ThrowOnAnyError = false,
                 MaxTimeout = 10000
             };
 
@@ -48,6 +48,28 @@ namespace TMS_TestRail_FinalWork.Clients
             _logger.Info("Response Body: " + response.Content);
 
             return response.Data;
-        }        
+        }
+
+        public async Task<RestResponse> ExecuteAsync(RestRequest request)
+        {
+            _logger.Info("Request: " + request.Resource);
+            var response = await _restClient.ExecuteAsync(request);
+
+            _logger.Info("Response Status: " + response.ResponseStatus);
+            _logger.Info("Response Body: " + response.Content);
+
+            return response;
+        }
+
+        public async Task<T> ExecuteAsync<T>(RestRequest request)
+        {
+            _logger.Info("Request: " + request.Resource);
+            var response = await _restClient.ExecuteAsync<T>(request);
+
+            _logger.Info("Response Status: " + response.ResponseStatus);
+            _logger.Info("Response Body: " + response.Content);
+
+            return response.Data;
+        }
     }
 }

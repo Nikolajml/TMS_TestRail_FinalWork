@@ -30,6 +30,8 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests.BoundaryValuesTest
                 .NavigateToProjectCategorySearch()
                 .EnterDataInSearchField(searchProject);
 
+            Thread.Sleep(5000);
+
             Assert.IsFalse(dashboard_SearchProject_Page.IsPresentErrorLimitDialogMessage());
         }
     }
