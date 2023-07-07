@@ -13,6 +13,7 @@ UI-tests
 6.	Verify that "FileForUpload" is uploaded on the "DasboardPage" -> "AdministrationPage" -> "DataManagementPage" -> "AttachmentsPage".
 
 •	Negative: 
+
 7.	Verify that user can't login with invalid credentials;
 8.	Verify that after input in search field (more than 250 symbols) on the "DashboardPage" get error message;
 9.	Verify that Project is removed;
