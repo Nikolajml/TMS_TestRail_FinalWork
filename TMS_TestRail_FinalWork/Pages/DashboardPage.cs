@@ -21,7 +21,10 @@ namespace TMS_TestRail_FinalWork.Pages
         private static readonly By SearchQueryEnterBy = By.Id("search_query");
         private static readonly By ErrorDialogMessageBy = By.CssSelector("#messageDialog .dialog-body .dialog-message");
         private static readonly By SearchDialogCategoryBy = By.CssSelector("a[href$='[]=1']");
-        
+        private static readonly By TopLogoBy = By.Id("top-logo");
+        private static readonly By EnterpriseBubblePopupMessageBy = By.Id("enterpriseBubble");
+
+
 
         public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -90,6 +93,24 @@ namespace TMS_TestRail_FinalWork.Pages
         private void SelectProjectCategory()
         {                
             Driver.FindElement(SearchDialogCategoryBy).Click();    
-        }        
+        }
+
+
+
+        public bool WaitPopupMessage()
+        {
+            return WaitService.GetVisibleElement(EnterpriseBubblePopupMessageBy) != null;
+        }
+
+        public bool IsDispayedPopupMessage()
+        {
+            return Driver.FindElement(EnterpriseBubblePopupMessageBy).Displayed;
+        }
+
+        public DashboardPage ClickToTopLogo()
+        {
+            Driver.FindElement(TopLogoBy).Click();
+            return this;
+        }
     }
 }
