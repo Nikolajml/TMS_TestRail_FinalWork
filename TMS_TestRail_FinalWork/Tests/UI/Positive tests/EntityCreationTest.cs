@@ -25,7 +25,7 @@ namespace TMS_TestRail_FinalWork.Tests
             string expectedSuccessCreateProjectMessage = "Successfully added the new project.";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();
 

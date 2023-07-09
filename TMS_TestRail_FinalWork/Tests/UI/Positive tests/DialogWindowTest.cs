@@ -21,7 +21,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests
             string expectedTitle = "Configure JIRA Integration";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();
 

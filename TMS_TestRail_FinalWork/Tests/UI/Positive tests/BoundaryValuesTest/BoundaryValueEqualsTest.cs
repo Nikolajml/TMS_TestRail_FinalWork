@@ -22,7 +22,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests.BoundaryValuesTest
             string searchProject = "The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250The number of entered 250";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();
 

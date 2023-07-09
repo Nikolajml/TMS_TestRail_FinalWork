@@ -22,7 +22,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Negative_tests
             string expectedSuccessCreateUserMessage = "Successfully added the new user and sent an invitation email.";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();
 

@@ -23,7 +23,7 @@ namespace TMS_TestRail_FinalWork.Tests.API
             
             _logger.Info("Expected Milestone: " + expectedMilestone);
 
-            var actualMilestone = _milestoneService.AddAsMilestone(expectedMilestone, 33);
+            var actualMilestone = _milestoneService.AddAsMilestone(expectedMilestone, 5);
             _logger.Info("Actual Milestone: " + actualMilestone.ToString());
 
             Console.WriteLine($"Milestone Id: {actualMilestone.Id}");

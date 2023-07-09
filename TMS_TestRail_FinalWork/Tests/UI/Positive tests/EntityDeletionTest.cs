@@ -22,7 +22,7 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
             string expectedSuccessDeleteProjectMessage = "Successfully deleted the project.";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();                       
 
