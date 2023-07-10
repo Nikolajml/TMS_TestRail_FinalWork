@@ -23,7 +23,7 @@ namespace TMS_TestRail_FinalWork.Tests.Negative_tests
             string expectedErrorMessage = "Field Query is too long (250 characters at most).";
 
             User user = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
                 .Build();
 

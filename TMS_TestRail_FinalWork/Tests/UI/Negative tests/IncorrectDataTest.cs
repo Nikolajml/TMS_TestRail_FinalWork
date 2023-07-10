@@ -21,7 +21,7 @@ namespace TMS_TestRail_FinalWork.Tests.Negative_tests
             string expectedErrorMessage = "Email/Login or Password is incorrect. Please try again.";
 
             User incorrectPasswordUser = new UserBuilder()
-                .SetUsername("nicolas.maliavko@gmail.com")
+                .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("password")
                 .Build();
 

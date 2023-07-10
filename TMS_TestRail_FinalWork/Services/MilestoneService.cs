@@ -27,7 +27,6 @@ namespace TMS_TestRail_FinalWork.Services
             return _apiClient.Execute<Milestone>(request);
         }               
 
-
         public Milestone GetMilestone(int milestone_id)
         {
             var request = new RestRequest(Endpoints.GET_MILESTONE)
@@ -36,7 +35,6 @@ namespace TMS_TestRail_FinalWork.Services
             return _apiClient.Execute<Milestone>(request);
         }
 
-
         public async Task<RestResponse> GetMilestoneAsync(int milestoneId)
         {
             var request = new RestRequest(Endpoints.GET_MILESTONE)
@@ -44,6 +42,5 @@ namespace TMS_TestRail_FinalWork.Services
 
             return await _apiClient.ExecuteAsync(request);
         }
-
     }
 }

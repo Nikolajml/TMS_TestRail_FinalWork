@@ -15,6 +15,7 @@ namespace TMS_TestRail_FinalWork.Pages
         
         private static readonly By LibraryDropzoneButtonBy = By.Id("libraryDropzoneButton");
         private static readonly By FileInputBy = By.XPath("//div[@id='jstree-marker']/following::input");
+        
         string filePath = "D:/TeachMeSkills/Новая папка/TMS_TestRail_FinalWork/TMS_TestRail_FinalWork/Utilities/FileForUpload.txt";
 
         public DataManagement_Attachments_Page(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
