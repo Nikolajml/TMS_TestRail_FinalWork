@@ -65,8 +65,8 @@ namespace TMS_TestRail_FinalWork.BaseEntities
                 _allure.AddAttachment("Screenshot", "image/png", screenshotBytes);
             }
 
-            //Driver.Quit();
-            //Driver.Dispose();
+            Driver.Quit();
+            Driver.Dispose();
         }
     }
 }
