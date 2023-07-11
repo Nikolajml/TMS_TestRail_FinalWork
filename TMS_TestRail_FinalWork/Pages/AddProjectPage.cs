@@ -15,7 +15,7 @@ namespace TMS_TestRail_FinalWork.Pages
         private static string END_POINT = "index.php?/admin/projects/add";
                 
         private static readonly By NameInputBy = By.Id("name");
-        private static readonly By AnounecementInpuBy = By.Id("announcement");
+        private static readonly By AnounecementInpuBy = By.Id("announcement_display");
         private static readonly By AddProjectButtonBy = By.Id("accept");
 
         public AddProjectPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
