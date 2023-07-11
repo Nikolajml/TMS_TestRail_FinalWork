@@ -6,21 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using TMS_TestRail_FinalWork.BaseEntities;
 using TMS_TestRail_FinalWork.Models;
-using TMS_TestRail_FinalWork.Pages;
 
 namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests.BoundaryValuesTest
 {
-    public class BoundaryValueLessTest : BaseTest
+    public class BoundaryValueZeroTest : BaseTest
     {
         [Test(Description = "Boundary value test")]
         [Category("Boundary Value Test")]
-        [Description("The number of entered values does not exceed 250")]
+        [Description("The number of entered values is Zero")]
         [AllureOwner("User")]
         [AllureTag("Smoke")]
         [SmokeTest]
         public void BoundaryValeuLessThan_250_Test()
         {
-            string searchProject = "The number of entered values is 34";
+            string searchProject = "";
 
             User user = new UserBuilder()
                 .SetUsername("nicolas.maliavko+1@gmail.com")

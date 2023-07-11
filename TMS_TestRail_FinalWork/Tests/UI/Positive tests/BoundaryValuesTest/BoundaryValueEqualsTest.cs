@@ -11,7 +11,7 @@ namespace TMS_TestRail_FinalWork.Tests.UI.Positive_tests.BoundaryValuesTest
 {
     public class BoundaryValueEqualsTest : BaseTest
     {
-        [Test(Description = "Limit value test")]
+        [Test(Description = "Boundary value test")]
         [Category("Boundary Value Test")]
         [Description("The number of entered values is 250")]
         [AllureOwner("User")]
