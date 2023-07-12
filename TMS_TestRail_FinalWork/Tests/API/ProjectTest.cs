@@ -39,7 +39,14 @@ namespace TMS_TestRail_FinalWork.Tests.API
 
             Console.WriteLine($"Project Id: {actualProject.Id}");
 
-            Assert.AreEqual(expectedProject.Name, actualProject.Name);
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(expectedProject.Name, actualProject.Name);
+                Assert.AreEqual(expectedProject.Announcement, actualProject.Announcement);
+            });
+
+            
         }
 
         [Test(Description = "AFE GET api_test")]

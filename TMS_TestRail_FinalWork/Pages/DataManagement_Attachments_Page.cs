@@ -1,7 +1,9 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO.Enumeration;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TMS_TestRail_FinalWork.BaseEntities;
@@ -14,9 +16,8 @@ namespace TMS_TestRail_FinalWork.Pages
         private static string END_POINT = "";
         
         private static readonly By LibraryDropzoneButtonBy = By.Id("libraryDropzoneButton");
-        private static readonly By FileInputBy = By.XPath("//div[@id='jstree-marker']/following::input");
+        private static readonly By FileInputBy = By.CssSelector("#jstree-marker+.dz-hidden-input");                
         
-        string filePath = "D:/TeachMeSkills/Новая папка/TMS_TestRail_FinalWork/TMS_TestRail_FinalWork/Utilities/FileForUpload.txt";
 
         public DataManagement_Attachments_Page(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -38,14 +39,14 @@ namespace TMS_TestRail_FinalWork.Pages
             return END_POINT;
         }
 
-        void InputPathToUploadFile()
+        void InputPathToUploadFile(string filePath)
         {
             Driver.FindElement(FileInputBy).SendKeys(filePath);
         }
 
-        public DataManagement_Attachments_Page UploadFile()
+        public DataManagement_Attachments_Page UploadFile(string filePath)
         {
-            InputPathToUploadFile();
+            InputPathToUploadFile(filePath);
             return this;
         }
     }
