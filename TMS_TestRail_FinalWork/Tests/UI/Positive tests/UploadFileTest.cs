@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TMS_TestRail_FinalWork.BaseEntities;
@@ -20,7 +21,12 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
         [AllureTag("Smoke")]
         [SmokeTest]
         public void UploadTest()
-        {   
+        {
+            string directoryName = "/Utilities/";
+            string fileName = "FileForUpload.txt";
+
+            var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + directoryName + fileName;
+
             User user = new UserBuilder()
                 .SetUsername("nicolas.maliavko+1@gmail.com")
                 .SetPassword("Qwer_1234")
@@ -30,7 +36,7 @@ namespace TMS_TestRail_FinalWork.Tests.Positive_tests
                 .NavigateToOverviewPage()
                 .NavigateToDataManagement_Storage_Page()
                 .NavigateToDataManagement_Attachments_Page()
-                .UploadFile();
+                .UploadFile(filePath);
 
             Thread.Sleep(5000);
 

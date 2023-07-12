@@ -34,8 +34,13 @@ namespace TMS_TestRail_FinalWork.Tests.API
             Console.WriteLine("Username: " + actualUser.Username);
             Console.WriteLine("Email: " + actualUser.Email);
 
-            Assert.AreEqual(1, actualUser.Id);
-            Assert.AreEqual("Nicolas Maliavko", actualUser.Username);
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(1, actualUser.Id);
+                Assert.AreEqual("Nicolas Maliavko", actualUser.Username);
+            });
+
+            
         }                
     }
 }

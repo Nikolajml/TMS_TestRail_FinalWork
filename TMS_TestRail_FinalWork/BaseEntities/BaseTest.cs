@@ -32,13 +32,6 @@ namespace TMS_TestRail_FinalWork.BaseEntities
         [SetUp]
         public void Setup()
         {
-            _logger.Trace("Сообщение уровня Trace");
-            _logger.Debug("Сообщение уровня Debug");
-            _logger.Info("Сообщение уровня Info");
-            _logger.Warn("Сообщение уровня Warn");
-            _logger.Error("Сообщение уровня Error");
-            _logger.Fatal("Сообщение уровня Fatal");
-
             Driver = new Browser().Driver;
 
             LoginPage = new LoginPage(Driver, true);
